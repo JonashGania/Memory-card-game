@@ -1,6 +1,6 @@
 @font-face {
   font-family: "PKMN";
-  src: url(/public/fonts/PKMN\ RBYGSC.ttf);
+  src: url(/src/assets/fonts/PKMN\ RBYGSC.ttf);
 }
 
 *, *::after, *::before{
