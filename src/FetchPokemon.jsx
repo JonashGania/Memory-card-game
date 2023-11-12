@@ -17,8 +17,6 @@ export default function FetchPokemon() {
             const data = await response.json();
             const name = data.name;
             const image = data.sprites.front_default;
-            console.log(name);
-            console.log(image);
             return { name, image };
         } catch (error) {
             console.error('Error fetching Pokémon:', error.message);
