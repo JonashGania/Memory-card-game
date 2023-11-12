@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
 import '../styles/card.css'
 
-export default function Card({ pokemons }){
+export default function Card({ pokemons, onCardClick }){
 
     const [cards, setCards] = useState([]);
     const [isFlipped, setIsFlipped] = useState(false);
     const [isFlipping, setIsFlipping] = useState(false);
 
     useEffect(() => {
-        setCards([...pokemons])
-    }, [pokemons])
+        setCards([...pokemons]);
+    }, [pokemons]);
 
     const shuffleCards = () => {
         const shuffled = [...cards];
@@ -20,10 +20,11 @@ export default function Card({ pokemons }){
         setCards(shuffled);
     }
 
-    const handleCardClick = () => {
+    const handleCardClick = (id) => {
         if(!isFlipping){
             setIsFlipped(true)
             setIsFlipping(true)
+            onCardClick(id)
 
             setTimeout(() => {
                 setIsFlipped(false);
@@ -38,7 +39,10 @@ export default function Card({ pokemons }){
             <ul>
                 {cards.map((card, index) => (
                     <li key={index} >
-                        <div className={isFlipped ? 'card-container flipped': 'card-container'}  onClick={handleCardClick}>
+                        <div 
+                            className={isFlipped ? 'card-container flipped': 'card-container'}  
+                            onClick={() => handleCardClick(card.id)}
+                        >
                             <div className="front">
                                 <img 
                                     src={card.image} 
@@ -47,9 +51,7 @@ export default function Card({ pokemons }){
                                 />
                                 <h3 className="pokemon-name">{card.name}</h3>
                             </div>
-                            <div className="back">
-
-                            </div>
+                            <div className="back"></div>
                         </div>
                     </li>
                 ))}
