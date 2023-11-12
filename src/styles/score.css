@@ -1,0 +1,39 @@
+.game-name{
+    color: red;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.game-name span{
+    color: rgb(0, 0, 0);
+}
+
+.score-container{
+    width: 100%;
+    padding: 2rem 2rem 3rem 2rem;
+}
+
+.game-title img{
+    width: 30px;
+}
+
+.game-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.score-board{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.score-board b{
+    padding-left: 1rem;
+    font-size: 1rem;
+}
