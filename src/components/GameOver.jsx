@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function GameOver() {
+export default function GameOver( {currentScore, status} ) {
   return (
-    <div>GameOver</div>
+    <div className='modal'>
+      
+    </div>
   )
 }
