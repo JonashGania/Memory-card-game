@@ -1,9 +1,9 @@
 import React from 'react'
 import '../styles/gameOver.css'
 
-export default function GameOver( {currentScore, result, onPlayAgain} ) {
+export default function GameOver( {currentScore, result, onPlayAgain, gameOver} ) {
   return (
-    <div className='overlay'>
+    <div className="overlay">
       <div className="modal">
         <img 
           src="/pokeball.png" 
