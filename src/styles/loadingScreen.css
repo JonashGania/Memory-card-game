@@ -1,0 +1,19 @@
+.loading-screen{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.loading-gif{
+    width: 200px;   
+}
+
+.loading-screen b{
+    padding: 2rem;
+    font-size: 2rem;
+    color: white;
+}
