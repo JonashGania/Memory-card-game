@@ -1,9 +1,24 @@
 import React from 'react'
+import '../styles/gameOver.css'
 
-export default function GameOver( {currentScore, status} ) {
+export default function GameOver( {currentScore, result, onPlayAgain} ) {
   return (
-    <div className='modal'>
-      
+    <div className='overlay'>
+      <div className="modal">
+        <img 
+          src="/pokeball.png" 
+          alt="pokeball" 
+          className='pokeball-animation'
+        />
+        <h2>{result === "win" ? "You Win!" : "Game Over!"}</h2>
+        <p className='final-score'>Your Final Score is <b>{currentScore}</b></p>
+        <button 
+          onClick={onPlayAgain}
+          className='play-again'
+        >
+          PLAY AGAIN
+        </button>
+      </div>
     </div>
   )
 }
