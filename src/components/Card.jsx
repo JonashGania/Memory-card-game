@@ -20,6 +20,8 @@ export default function Card({ pokemons, onCardClick }){
         setCards(shuffled);
     }
 
+    
+
     const handleCardClick = (id) => {
         if(!isFlipping){
             setIsFlipped(true)
