@@ -37,8 +37,8 @@ ul li{
 .back{
     background: url(/card-back.png);
     background-size: cover;
-    background-position: center;
-    transform: rotateX(180deg);
+    background-position: center;  
+    transform: rotateY(180deg); 
 }
 
 .flipped{
