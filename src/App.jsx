@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react'
 import './styles/App.css'
+import BGM from './assets/music/littleroot-town.mp3'
 import useFetchPokemon from './fetchPokemon'
 import Score from './components/Score'
 import Card from './components/Card'
 import GameOver from './components/GameOver'
 import LoadingScreen from './components/LoadingScreen'
+import BackgroundMusic from './components/BackgroundMusic'
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);
   const [gameOver, setGameOver] = useState(false);
+
 
   const handleCardClick = (id) => {
     if (gameOver) {
@@ -32,7 +35,6 @@ function App() {
     }
 
     if (newSelectedCards.length === pokemonData.length) {
-      setCurrentScore(0);
       setBestScore(10);
       newSelectedCards = [];
       setGameOver(true);
@@ -54,11 +56,13 @@ function App() {
         <LoadingScreen />
       ) : (
         <>
+          <BackgroundMusic src={BGM}/>
           {gameOver && (
             <GameOver
               currentScore={currentScore}
               result={selectedCards.length === pokemonData.length ? 'win' : 'lose'}
               onPlayAgain={handlePlayAgain}
+              gameOver={gameOver}
             />
           )}
           <Score currentScore={currentScore} bestScore={bestScore} />
