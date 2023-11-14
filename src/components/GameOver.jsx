@@ -3,8 +3,8 @@ import '../styles/gameOver.css'
 
 export default function GameOver( {currentScore, result, onPlayAgain, gameOver} ) {
   return (
-    <div className="overlay">
-      <div className="modal">
+    <div className={`overlay ${gameOver ? 'open' : ''}`}>
+      <div className={`modal ${gameOver ? 'open' : ''}`}>
         <img 
           src="/pokeball.png" 
           alt="pokeball" 
