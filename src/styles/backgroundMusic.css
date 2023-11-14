@@ -1,0 +1,17 @@
+.music-button{
+    padding: .5rem;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.music-button:active{
+    transform: scale(0.8);
+}
+
+.music-container{
+    position: fixed;
+    padding: .5rem;
+}
