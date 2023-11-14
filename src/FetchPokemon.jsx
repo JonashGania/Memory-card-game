@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default function useFetchPokemon(callback) {
-  const [pokemonNames, setPokemonNames] = useState([]);
+  const [pokemons, setPokemons] = useState([]);
 
   const getRandomPokemonId = () => {
     return Math.floor(Math.random() * 898) + 1;
@@ -30,8 +30,8 @@ export default function useFetchPokemon(callback) {
       randomPokemonNames.push(pokemonName);
     }
 
-    setPokemonNames(randomPokemonNames);
-
+    setPokemons(randomPokemonNames);
+    
     if(callback){
       callback();
     }
@@ -41,5 +41,5 @@ export default function useFetchPokemon(callback) {
     getRandomPokemons();
   }, []);
 
-  return pokemonNames;
+  return pokemons
 }
