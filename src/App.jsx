@@ -60,7 +60,7 @@ function App() {
           {gameOver && (
             <GameOver
               currentScore={currentScore}
-              result={selectedCards.length === pokemonData.length ? 'win' : 'lose'}
+              result={currentScore === 10 ? 'win' : 'lose'}
               onPlayAgain={handlePlayAgain}
               gameOver={gameOver}
             />
