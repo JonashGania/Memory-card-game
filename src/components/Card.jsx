@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Tilt from 'react-parallax-tilt'
 import '../styles/card.css'
 
 export default function Card({ pokemons, onCardClick }){
@@ -41,20 +42,24 @@ export default function Card({ pokemons, onCardClick }){
             <ul>
                 {cards.map((card, index) => (
                     <li key={index} >
-                        <div 
-                            className={isFlipped ? 'card-container flipped': 'card-container'}  
-                            onClick={() => handleCardClick(card.id)}
-                        >
-                            <div className="front">
-                                <img 
-                                    src={card.image} 
-                                    alt="pokemon image" 
-                                    className="card-image"
-                                />
-                                <h3 className="pokemon-name">{card.name}</h3>
+                       <Tilt
+                        tiltReverse
+                       >
+                            <div 
+                                className={isFlipped ? 'card-container flipped': 'card-container'}  
+                                onClick={() => handleCardClick(card.id)}
+                            >
+                                <div className="front">
+                                    <img 
+                                        src={card.image} 
+                                        alt="pokemon image" 
+                                        className="card-image"
+                                    />
+                                    <h3 className="pokemon-name">{card.name}</h3>
+                                </div>
+                                <div className="back"></div>
                             </div>
-                            <div className="back"></div>
-                        </div>
+                       </Tilt>
                     </li>
                 ))}
             </ul>
