@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types';
 import '../styles/backgroundMusic.css'
 
 export default function BackgroundMusic({ src }) {
@@ -37,4 +38,8 @@ export default function BackgroundMusic({ src }) {
             </button>
         </div>
     )
+}
+
+BackgroundMusic.propTypes = {
+    src: PropTypes.string.isRequired,
 }
