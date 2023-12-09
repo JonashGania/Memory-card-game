@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Tilt from 'react-parallax-tilt'
+import PropTypes from 'prop-types';
 import '../styles/card.css'
 
 export default function Card({ pokemons, onCardClick }){
@@ -65,4 +66,10 @@ export default function Card({ pokemons, onCardClick }){
             </ul>
         </div>
     )
+}
+
+
+Card.propTypes = {
+    pokemons: PropTypes.array.isRequired,
+    onCardClick: PropTypes.func.isRequired,
 }
