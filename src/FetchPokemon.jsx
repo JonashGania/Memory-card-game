@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 export default function useFetchPokemon(callback) {
   const [pokemons, setPokemons] = useState([]);
@@ -42,4 +43,8 @@ export default function useFetchPokemon(callback) {
   }, []);
 
   return pokemons
+}
+
+useFetchPokemon.propTypes = {
+  callback: PropTypes.func.isRequired,
 }
