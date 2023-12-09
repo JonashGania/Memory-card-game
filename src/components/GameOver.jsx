@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import '../styles/gameOver.css'
 
 export default function GameOver( {currentScore, result, onPlayAgain, gameOver} ) {
@@ -21,4 +22,12 @@ export default function GameOver( {currentScore, result, onPlayAgain, gameOver} 
       </div>
     </div>
   )
+}
+
+
+GameOver.propTypes = {
+  currentScore: PropTypes.number.isRequired,
+  result: PropTypes.oneOf(['win', 'lose']).isRequired,
+  onPlayAgain: PropTypes.func.isRequired,
+  gameOver: PropTypes.bool.isRequired,
 }
