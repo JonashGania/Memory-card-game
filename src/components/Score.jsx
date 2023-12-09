@@ -1,5 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import '../styles/score.css'
+
 
 export default function Score( {currentScore, bestScore} ) {
   return (
@@ -22,4 +24,10 @@ export default function Score( {currentScore, bestScore} ) {
       </div>
     </div>
   )
+}
+
+
+Score.propTypes = {
+  currentScore: PropTypes.number.isRequired,
+  bestScore: PropTypes.number.isRequired,
 }
