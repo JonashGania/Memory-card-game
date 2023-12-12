@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 export default function useFetchPokemon(callback) {
   const [pokemons, setPokemons] = useState([]);
@@ -10,13 +11,10 @@ export default function useFetchPokemon(callback) {
 
   const fetchPokemon = async (id) => {
     try {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-      if (!response.ok) {
-        throw new Error('Network response was not ok.');
-      }
-      const data = await response.json();
-      const name = data.name;
-      const image = data.sprites.front_default;
+      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+
+      const name = response.data.name;
+      const image = response.data.sprites.front_default;
       return { id, name, image };
     } catch (error) {
       console.error('Error fetching Pokémon:', error.message);
